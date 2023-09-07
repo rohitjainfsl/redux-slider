@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import "./App.css"
 import { useDispatch, useSelector } from "react-redux";
 import { getData, incrementSlider, decrementSlider } from "./slice";
 
@@ -17,6 +18,8 @@ function App() {
   else {
     return (
       <>
+      <div className="maindiv">
+
         <div className="slider">
           <div className="slider-wrapper">
             <div className="left">
@@ -32,16 +35,17 @@ function App() {
             <button
               onClick={() => dispatch(decrementSlider())}
               disabled={init.page === 1 ? true : false}
-            >
+              >
               Prev
             </button>
             <button
               onClick={() => dispatch(incrementSlider())}
               disabled={init.page === 19 ? true : false}
-            >
+              >
               Next
             </button>
           </div>
+              </div>
         </div>
       </>
     );
